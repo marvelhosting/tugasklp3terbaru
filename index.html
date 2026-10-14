@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100b2b">
+<title>Realm of Social — E-Mading Fantasi</title>
+<style>
+:root{--bg:#100b2b;--panel:#1c1640;--panel2:#251d50;--ink:#f7f4ff;--muted:#c5bddf;--gold:#ffd979;--cyan:#8deaff;--pink:#ff9fda;--line:#514577}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at top,#342064 0,#100b2b 55%);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}button,input,textarea{font:inherit}button,a{touch-action:manipulation}button:focus-visible,a:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--gold);outline-offset:3px}a{color:inherit}.stars{position:fixed;inset:0;pointer-events:none;opacity:.32;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(1px 1px at 90px 70px,#8deaff,transparent),radial-gradient(2px 2px at 150px 130px,#ffd979,transparent);background-size:190px 170px;z-index:-1}
+header{position:sticky;top:0;z-index:10;background:#100b2beF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.nav{max-width:1120px;margin:auto;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:12px}.logo{font-weight:950;letter-spacing:.04em}.logo span{color:var(--gold)}.navlinks{display:flex;gap:8px;flex-wrap:wrap}.navlinks a,.navbtn{padding:8px 12px;border:1px solid transparent;border-radius:10px;text-decoration:none;color:var(--muted);font-weight:700;font-size:.9rem}.navlinks a:hover,.navbtn:hover{background:var(--panel2);color:white;border-color:var(--line)}.menu-toggle{display:none}
+main{max-width:1120px;margin:auto;padding:0 20px}.hero{padding:62px 0 38px;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}.kicker{display:inline-block;border:1px solid #7661ad;background:#2b2053;color:var(--gold);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:900;letter-spacing:.08em}.hero h1{font-size:clamp(2.5rem,6vw,5.4rem);line-height:.99;letter-spacing:-.05em;margin:18px 0}.hero h1 span{color:var(--cyan);text-shadow:0 0 24px #8deaff40}.hero p{color:var(--muted);font-size:1.08rem;max-width:590px}.btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}.btn{min-height:44px;border:1px solid var(--line);border-radius:12px;padding:10px 16px;background:var(--panel2);color:white;font-weight:850;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px}.btn.primary{background:linear-gradient(120deg,#8b6dff,#5a4bcc);border-color:#a79aff}.btn.gold{background:var(--gold);color:#21153e;border-color:var(--gold)}.btn:hover{filter:brightness(1.12);transform:translateY(-1px)}.btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+.portal{min-height:300px;display:grid;place-items:center;position:relative}.orb{width:min(300px,75vw);aspect-ratio:1;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#8deaff,#7e66ec 32%,#34215f 65%,#171034 70%);border:2px solid #b2a6ff;box-shadow:0 0 45px #8e76ff55,inset 0 0 35px #d7c7ff44;animation:float 5s ease-in-out infinite}.orb-inner{font-size:6rem;filter:drop-shadow(0 5px 10px #100b2b99)}.orbit{position:absolute;width:min(350px,90vw);aspect-ratio:1;border:1px dashed #8deaff80;border-radius:50%;animation:spin 22s linear infinite}.satellite{position:absolute;top:5%;right:10%;font-size:2.5rem}.floating{position:absolute;padding:10px 13px;background:#241b4beF;border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 25px #0004}.float1{left:0;top:12%}.float2{right:0;bottom:8%}@keyframes float{50%{transform:translateY(-10px)}}@keyframes spin{to{transform:rotate(360deg)}}
+.section{padding:38px 0;scroll-margin-top:80px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:20px}.sectionhead h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.1;margin:0}.sectionhead p{color:var(--muted);max-width:490px;margin:0}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}.card{background:linear-gradient(145deg,#211a49,#171235);border:1px solid var(--line);border-radius:19px;padding:22px;min-width:0}.card .emoji{font-size:2rem}.card h3{margin:8px 0 5px}.card p{margin:0;color:var(--muted)}.label{display:inline-block;color:var(--cyan);font-size:.75rem;font-weight:900;letter-spacing:.08em}.good{border-top:3px solid #73e5bf}.risk{border-top:3px solid var(--pink)}.wise{border-top:3px solid var(--gold)}
+.banner{border:1px solid #62518f;border-radius:22px;padding:28px;background:linear-gradient(110deg,#2a2055,#171234);display:flex;align-items:center;justify-content:space-between;gap:20px}.banner blockquote{font-size:clamp(1.35rem,3vw,2.1rem);font-weight:900;line-height:1.3;margin:8px 0}.banner p{color:var(--muted);margin:0}.spark{font-size:4rem;color:var(--gold)}
+.tips{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tip{display:flex;gap:13px;padding:16px;background:#1c1640;border:1px solid var(--line);border-radius:15px}.num{width:36px;height:36px;flex:0 0 36px;display:grid;place-items:center;background:#3a2b68;border:1px solid #7560ad;border-radius:11px;color:var(--gold);font-weight:950}.tip b{display:block}.tip p{color:var(--muted);margin:2px 0 0;font-size:.94rem}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:15px}.panel{background:#1c1640;border:1px solid var(--line);border-radius:20px;padding:22px}.panel h3{margin-top:0}.panel p{color:var(--muted)}.field{display:block;width:100%;margin:8px 0 12px;background:#100b2b;color:white;border:1px solid #62518f;border-radius:11px;padding:12px;min-height:45px}.field::placeholder{color:#9e95bd}textarea.field{min-height:100px;resize:vertical}.result{padding:12px;background:#120e2c;border:1px dashed #62518f;border-radius:12px;min-height:45px;overflow-wrap:anywhere;color:var(--cyan)}.quiz-options{display:grid;gap:9px}.answer{background:#120e2c;color:white;border:1px solid #62518f;padding:12px;border-radius:12px;text-align:left;cursor:pointer;min-height:44px}.answer:hover,.answer.chosen{border-color:var(--cyan);background:#292052}.feedback{min-height:30px;color:var(--gold);font-weight:800;margin-top:12px}.progress{height:7px;background:#100b2b;border-radius:99px;overflow:hidden;margin:10px 0}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--cyan),#a58bff);transition:width .25s}
+footer{margin-top:35px;border-top:1px solid var(--line);text-align:center;padding:28px 20px;color:var(--muted)}footer b{color:white}.backtop{position:fixed;right:16px;bottom:16px;z-index:8;border-radius:50%;width:48px;height:48px;background:var(--gold);color:#21153e;border:0;font-size:1.3rem;font-weight:900;cursor:pointer;box-shadow:0 5px 20px #0005}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:42px}.portal{min-height:260px}.orb{width:220px}.orb-inner{font-size:4.5rem}.orbit{width:260px}.cards{grid-template-columns:1fr}.sectionhead{display:block}.sectionhead p{margin-top:10px}.tips,.tools{grid-template-columns:1fr}.banner{align-items:flex-start}.spark{font-size:2.5rem}.nav{align-items:flex-start;flex-wrap:wrap}.navlinks{width:100%;display:none}.navlinks.open{display:flex}.menu-toggle{display:inline-flex;margin-left:auto}.navlinks a{flex:1;text-align:center}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+@media print{header,.btnrow,.backtop,.tools{display:none!important}body{background:white;color:#111}.card,.panel,.tip,.banner{background:white;color:#111;border:1px solid #aaa}.card p,.tip p,.banner p,.sectionhead p{color:#333}.hero h1 span{color:#333}}
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<header><div class="nav">
+  <a class="logo" href="#home" style="text-decoration:none">✦ REALM<span> OF SOCIAL</span></a>
+  <button class="btn menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navlinks">☰ Menu</button>
+  <nav class="navlinks" id="navlinks" aria-label="Navigasi">
+    <a href="#lore">Dunia Sosial</a><a href="#dampak">Dampak</a><a href="#panduan">Panduan</a><a href="#interaktif">Ruang Interaktif</a><a href="#anggota">Anggota Kelompok</a>
+  </nav>
+</div></header>
+<main id="home">
+<section class="hero">
+ <div>
+  <span class="kicker">✧ E-MADING DIGITAL  ✧</span>
+  <h1>Jelajahi Dunia<br><span>Media Sosial</span></h1>
+  <p>Di kerajaan digital, setiap unggahan adalah mantra dan setiap komentar meninggalkan jejak. Gunakan kekuatan media sosial untuk menyebarkan ilmu, kreativitas, dan kebaikan!</p>
+  <div class="btnrow"><a class="btn primary" href="#lore">⚔️ Mulai petualangan</a></div>
+  <p id="heroStatus" class="feedback" aria-live="polite"></p>
+ </div>
+ <div class="portal" aria-label="Ilustrasi portal ajaib"><div class="orbit"></div><div class="orb"><div class="orb-inner">🔮</div></div><div class="satellite">✨</div><div class="floating float1">🧙‍♀️ Bijak berbagi</div><div class="floating float2">🛡️ Lindungi privasi</div></div>
+</section>
+<section class="section" id="lore">
+ <div class="sectionhead"><h2>📜 Peta Kerajaan Digital</h2><p>Media sosial adalah platform untuk berkomunikasi, berbagi informasi, berkarya, dan membangun komunitas secara daring.</p></div>
+ <div class="cards">
+  <article class="card"><div class="emoji">🦉</div><span class="label">MENARA ILMU</span><h3>Belajar & Menemukan</h3><p>Temukan materi belajar dan pengetahuan baru. Periksa sumber agar tidak tersesat oleh informasi palsu.</p></article>
+  <article class="card"><div class="emoji">🪄</div><span class="label">BENGKEL KREATIF</span><h3>Berkarya & Berbagi</h3><p>Bagikan seni, video, ide, dan bakat. Beri kredit saat memakai karya orang lain.</p></article>
+  <article class="card"><div class="emoji">🌉</div><span class="label">JEMBATAN PERTEMANAN</span><h3>Terhubung</h3><p>Jaga hubungan dengan teman dan keluarga, sekaligus hormati batasan serta privasi mereka.</p></article>
+ </div>
+</section>
+<section class="section" id="dampak">
+ <div class="sectionhead"><h2>⚖️ Cahaya & Bayangan</h2><p>Media sosial bisa menjadi kekuatan baik—atau sumber masalah—bergantung pada cara kita menggunakannya.</p></div>
+ <div class="cards">
+  <article class="card good"><span class="label">☀️ CAHAYA</span><div class="emoji">🌟</div><h3>Dampak Positif</h3><p>Komunikasi cepat, belajar lebih mudah, kreativitas berkembang, komunitas terbentuk, dan informasi bermanfaat tersebar.</p></article>
+  <article class="card risk"><span class="label">🌑 BAYANGAN</span><div class="emoji">🐉</div><h3>Risiko yang Perlu Diwaspadai</h3><p>Hoaks, perundungan siber, penipuan, kebocoran data pribadi, konflik, dan waktu layar berlebihan.</p></article>
+  <article class="card wise"><span class="label">🧭 JALAN TENGAH</span><div class="emoji">🛡️</div><h3>Gunakan dengan Bijak</h3><p>Pilih konten bermanfaat, atur waktu, cek fakta, jaga privasi, dan minta bantuan jika mengalami gangguan.</p></article>
+ </div>
+</section>
+<section class="section">
+ <div class="banner"><div><span class="label">MANTRA WARGA DIGITAL</span><blockquote>“Saring sebelum sharing. Pikir sebelum mengetik. Hormati sebelum berkomentar.”</blockquote><p>Jadilah pahlawan digital yang menyebarkan kebaikan, bukan kebencian.</p></div><div class="spark" aria-hidden="true">✧</div></div>
+</section>
+<section class="section" id="panduan">
+ <div class="sectionhead"><h2>🛡️ Buku Panduan Petualang</h2><p>Delapan kebiasaan yang membantu kamu aman dan nyaman di dunia digital.</p></div>
+ <div class="tips">
+  <div class="tip"><div class="num">1</div><div><b>Periksa fakta</b><p>Cek sumber dan bandingkan informasi sebelum membagikan berita.</p></div></div>
+  <div class="tip"><div class="num">2</div><div><b>Jaga rahasia pribadi</b><p>Jangan membagikan kata sandi, alamat rumah, atau lokasi langsung sembarangan.</p></div></div>
+  <div class="tip"><div class="num">3</div><div><b>Ingat jejak digital</b><p>Unggahan dapat disimpan dan disebarkan ulang. Pikirkan sebelum memposting.</p></div></div>
+  <div class="tip"><div class="num">4</div><div><b>Gunakan kata yang baik</b><p>Berbeda pendapat boleh; menghina atau mempermalukan orang tidak perlu.</p></div></div>
+  <div class="tip"><div class="num">5</div><div><b>Atur waktu layar</b><p>Seimbangkan media sosial dengan belajar, tidur, aktivitas fisik, dan keluarga.</p></div></div>
+  <div class="tip"><div class="num">6</div><div><b>Blokir dan laporkan</b><p>Gunakan fitur laporan bila menemukan akun yang mengganggu atau menipu.</p></div></div>
+  <div class="tip"><div class="num">7</div><div><b>Minta bantuan</b><p>Ceritakan masalah kepada orang dewasa tepercaya jika merasa tidak aman.</p></div></div>
+  <div class="tip"><div class="num">8</div><div><b>Hormati karya orang</b><p>Minta izin dan cantumkan sumber ketika menggunakan karya milik orang lain.</p></div></div>
+ </div>
+</section>
+<section class="section" id="interaktif">
+ <div class="sectionhead"><h2>🧪 Laboratorium Interaktif</h2><p>Coba fitur-fitur berikut. Tombol dirancang untuk melakukan tindakan nyata di halaman ini.</p></div>
+ <div class="tools">
+  <div class="panel">
+   <h3>🧠 Tantangan Penjaga Fakta</h3>
+   <p id="quizQuestion">Pertanyaan 1 dari 5: Jika kamu menerima berita mengejutkan dari akun tak dikenal, apa yang sebaiknya dilakukan?</p>
+   <div class="quiz-options" id="quizOptions">
+    <button class="answer" data-choice="0" type="button">A. Langsung menyebarkannya</button>
+    <button class="answer" data-choice="1" type="button">B. Periksa sumber dan bandingkan fakta</button>
+    <button class="answer" data-choice="2" type="button">C. Tambahkan judul yang lebih heboh</button>
+    <button class="answer" data-choice="3" type="button">D. Percaya karena banyak yang suka</button>
+   </div>
+   <div class="progress" aria-label="Kemajuan kuis"><span id="quizProgress"></span></div>
+   <div class="feedback" id="quizFeedback" aria-live="polite">Pilih jawaban untuk memulai tantangan.</div>
+   <div class="btnrow"><button class="btn primary" id="nextQuiz" type="button" disabled>Soal berikutnya →</button><button class="btn" id="resetQuiz" type="button">↻ Ulangi kuis</button></div>
+  </div>
+  <div class="panel">
+   <h3>✉️ Buat Pesan Kebaikan</h3><p>Tulis pesan positif untuk dibagikan di kelas atau mading. Hindari data pribadi.</p>
+   <label for="messageInput">Pesanmu</label><textarea class="field" id="messageInput" maxlength="240" placeholder="Contoh: Yuk, cek fakta sebelum membagikan berita!"></textarea>
+   <button class="btn primary" id="makeMessage" type="button">✨ Buat kartu pesan</button>
+   <button class="btn" id="clearMessage" type="button">Hapus</button>
+   <div style="margin-top:12px"><b>Pratinjau kartu</b><div class="result" id="messageResult" aria-live="polite">Pesanmu akan muncul di sini.</div></div>
+   <button class="btn" id="copyMessage" type="button" style="margin-top:10px">Salin pesan</button><div class="feedback" id="messageStatus" aria-live="polite"></div>
+  </div>
+  <div class="panel">
+   <h3>🌙 Mode Malam & Fokus</h3><p>Ubah tampilan untuk membaca dengan nyaman, atau aktifkan mode fokus untuk menyembunyikan dekorasi yang bergerak.</p>
+   <button class="btn" id="themeBtn" type="button">🌗 Ganti mode terang/gelap</button>
+   <button class="btn" id="motionBtn" type="button">⏸️ Hentikan animasi</button>
+   <div class="feedback" id="viewStatus" aria-live="polite">Tema gelap fantasi aktif.</div>
+  </div>
+  <div class="panel">
+   <h3>🧭 Portal Jelajah Cepat</h3><p>Pilih lokasi di mading untuk langsung berpindah bagian.</p>
+   <label for="destination">Tujuan portal</label><select class="field" id="destination"><option value="#lore">Peta Kerajaan Digital</option><option value="#dampak">Cahaya & Bayangan</option><option value="#panduan">Buku Panduan Petualang</option><option value="#interaktif">Laboratorium Interaktif</option></select>
+   <button class="btn gold" id="travelBtn" type="button">Buka portal →</button>
+   <button class="btn" id="topBtn" type="button">Kembali ke atas ↑</button>
+   <p id="portalStatus" class="feedback" aria-live="polite"></p>
+  </div>
+ </div>
+</section>
+<section class="section" id="anggota">
+ <div class="sectionhead"><h2>🧙‍♀️  Kelompok 3</h2><p>Kenali para penjelajah yang menyusun E-Mading  ini.</p></div>
+ <div class="cards">
+  <article class="card"><div class="emoji">🦊</div><span class="label">ANGGOTA 01</span><h3>Marvel</h3><p>Penjelajah Kerajaan Digital</p></article>
+  <article class="card"><div class="emoji">🦁</div><span class="label">ANGGOTA 02</span><h3>Edward</h3><p>Penjaga Cahaya Informasi</p></article>
+  <article class="card"><div class="emoji">🦋</div><span class="label">ANGGOTA 03</span><h3>Ainun</h3><p>Penyebar Pesan Kebaikan</p></article>
+  <article class="card"><div class="emoji">🦄</div><span class="label">ANGGOTA 04</span><h3>Nilla</h3><p>Perancang Dunia Kreatif</p></article>
+  <article class="card"><div class="emoji">🐉</div><span class="label">ANGGOTA 05</span><h3>Sutarni</h3><p>Pelindung Warga Digital</p></article>
+ </div>
+</section>
+</main>
+<footer><b>✦ REALM OF SOCIAL — E-MADING  ✦</b><br>Media Sosial dan Dampaknya<br><small>Disusun oleh kelompok: Marvel, Edward, Ainun, Nilla, dan Sutarni.</small></footer>
+<button class="backtop" id="backTopFloat" type="button" aria-label="Kembali ke atas" title="Kembali ke atas">↑</button>
+<script>
+(function(){
+const $=id=>document.getElementById(id);
+const root=document.documentElement;
+const nav=$('navlinks');
+$('menuToggle').addEventListener('click',()=>{const open=nav.classList.toggle('open');$('menuToggle').setAttribute('aria-expanded',String(open));});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');$('menuToggle').setAttribute('aria-expanded','false');}));
+$('printBtn').addEventListener('click',()=>);
+let speaking=false;
+$('readBtn').addEventListener('click',()=>{
+ const status=$('heroStatus');
+ if(!('speechSynthesis' in window)){status.textContent='Fitur suara tidak didukung browser ini.';return;}
+ if(speaking){speaking=false;$('readBtn').textContent='🔊 Bacakan pesan';status.textContent='Pembacaan dihentikan.';return;}
+ const utterance=new SpeechSynthesisUtterance('Selamat datang di Realm of Social. Saring sebelum sharing. Pikir sebelum mengetik. Hormati sebelum berkomentar. Gunakan media sosial untuk belajar, berkarya, dan menyebarkan kebaikan.');
+ utterance.lang='id-ID';utterance.onend=()=>{speaking=false;$('readBtn').textContent='🔊 Bacakan pesan';status.textContent='Pesan selesai dibacakan.';};utterance.onerror=()=>{speaking=false;$('readBtn').textContent='🔊 Bacakan pesan';status.textContent='Suara tidak dapat diputar di browser ini.';};speaking=true;$('readBtn').textContent='⏹️ Hentikan suara';status.textContent='Sedang membacakan pesan…';
+});
+const quizData=[
+ {q:'Jika kamu menerima berita mengejutkan dari akun tak dikenal, apa yang sebaiknya dilakukan?',o:['Langsung menyebarkannya','Periksa sumber dan bandingkan fakta','Tambahkan judul yang lebih heboh','Percaya karena banyak yang suka'],a:1,why:'Memeriksa sumber dan membandingkan fakta membantu mencegah penyebaran hoaks.'},
+ {q:'Informasi mana yang sebaiknya tidak dibagikan secara terbuka?',o:['Tips belajar umum','Poster kegiatan sekolah yang sudah diumumkan','Kata sandi dan alamat rumah','Karya seni buatan sendiri'],a:2,why:'Kata sandi dan alamat rumah adalah informasi pribadi yang perlu dilindungi.'},
+ {q:'Apa tindakan tepat jika melihat teman mengalami perundungan siber?',o:['Ikut mengejek agar ramai','Sebarkan tangkapan layar ke semua orang','Diam saja meski situasinya berbahaya','Dukung teman, laporkan, dan minta bantuan orang dewasa tepercaya'],a:3,why:'Dukungan, pelaporan, dan bantuan orang dewasa tepercaya dapat membantu menghentikan perundungan.'},
+ {q:'Apa yang dimaksud jejak digital?',o:['Rekam jejak aktivitas yang ditinggalkan saat menggunakan la
